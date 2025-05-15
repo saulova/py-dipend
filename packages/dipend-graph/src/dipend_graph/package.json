@@ -1,0 +1,26 @@
+{
+  "name": "dipend-graph",
+  "private": true,
+  "version": "0.0.0",
+  "author": "Saulo V. Alvarenga",
+  "description": "A library for generating a DAG (Directed Acyclic Graph) of dependencies registered in Dipend's dependency container.",
+  "license": "Apache-2.0",
+  "homepage": "https://dipend.sauloalvarenga.dev.br",
+  "repository": "github:saulova/py-dipend",
+  "bugs": "https://github.com/saulova/ts-dipend/issues/",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/saulova"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "clear": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.35.0"
+  }
+}

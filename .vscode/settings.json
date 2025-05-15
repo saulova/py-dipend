@@ -1,0 +1,20 @@
+{
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+  },
+  "python.terminal.activateEnvironment": false,
+  "python.terminal.activateEnvInCurrentTerminal": false,
+  "python.analysis.extraPaths": ["packages/**"],
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "pyproject.toml": "ruff*, .python-version, uv.lock, Taskfile.yaml, .gitignore",
+    "README.md": "CLA.md, CODE_OF_CONDUCT.md, CONTRIBUTING.md, LICENSE, THIRD_PARTY_NOTICE.md"
+  },
+  "yaml.schemas": {
+    "https://taskfile.dev/schema.json": "*.taskfile.yaml"
+  }
+}

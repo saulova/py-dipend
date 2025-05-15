@@ -1,0 +1,41 @@
+[project]
+name = "dipend-repo"
+version = "1.0.0"
+license = "Apache-2.0"
+description = "Dipend's repository"
+authors = [
+  { name = "Saulo V. Alvarenga", email = "saulo.va@protonmail.com" }
+]
+requires-python = ">=3.12"
+classifiers = ["Private :: Do Not Upload"]
+dependencies = [
+  "dipend",
+  "dipend-graph"
+]
+
+[tool.uv.sources]
+dipend = { workspace = true }
+dipend-graph = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+  "packages/*"
+]
+
+[dependency-groups]
+dev = [
+    "coverage==7.6.10",
+    "pytest==8.3.4",
+    "ruff==0.9.5",
+]
+
+[tool.coverage.report]
+omit = [
+    "**/test_*.py",
+    "**/__init__.py",
+    "**/__seedwork/*.py",
+    "**/api/**/*.py"
+]
+exclude_lines = [
+    "@overload"
+]

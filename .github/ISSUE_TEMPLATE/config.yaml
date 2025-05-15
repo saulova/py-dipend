@@ -1,0 +1,19 @@
+blank_issues_enabled: false
+issue_templates:
+  - name: Bug Report 🐛
+    description: Report a bug to help improve Dipend.
+    title: "[Bug]: "
+    labels: ["Bug", "Triage"]
+    file: bug_report.yml
+
+  - name: Feature Request ✨
+    description: Suggest a new feature or an improvement for Dipend.
+    title: "[Feature]: "
+    labels: ["Enhancement", "Triage"]
+    file: feature_request.yml
+
+  - name: Question / Support Request ❓
+    description: Ask a question or request help related to Dipend.
+    title: "[Question]: "
+    labels: ["Question", "Triage"]
+    file: question_support.yml

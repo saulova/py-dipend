@@ -1,0 +1,13 @@
+services:
+  py-dipend-devcontainer:
+    build:
+      context: .
+    volumes:
+      - ../:/workspaces/py-dipend:cached
+    networks:
+      - py-dipend-devcontainer
+    user: vscode
+
+networks:
+  py-dipend-devcontainer:
+    driver: bridge

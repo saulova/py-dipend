@@ -1,0 +1,32 @@
+[project]
+name = "dipend"
+version = "0.0.0"
+license = "Apache-2.0"
+description = "This library implements a dependency injection (DI) system in python, making it easier to manage dependencies in modular applications."
+authors = [
+  { name = "Saulo V. Alvarenga", email = "saulo.va@protonmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Libraries :: Application Frameworks",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Utilities",
+  "Typing :: Typed"
+]
+
+[project.urls]
+Homepage = "https://github.com/saulova/py-dipend"
+Documentation = "https://dipend.sauloalvarenga.dev.br"
+Repository = "https://github.com/saulova/py-dipend"
+Issues = "https://github.com/saulova/py-dipend/issues"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+

@@ -1,0 +1,95 @@
+name: Bug Report 🐛
+description: Report a bug to help improve Dipend
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Before You Start
+        Thank you for taking the time to report a bug. Please follow the checklist below before submitting your issue.
+  - type: markdown
+    attributes:
+      value: |
+        ## Preliminary Checks
+        - Make sure you're using the latest version of Dipend.
+        - Search existing [issues](https://github.com/saulova/py-dipend/issues) to see if this bug has already been reported or resolved.
+        - Review the [documentation](https://dipend.sauloalvarenga.dev.br) to confirm the behavior isn't expected.
+  - type: markdown
+    attributes:
+      value: |
+        ## Minimal Reproduction Required
+        Please provide a minimal and self-contained Python code example that reproduces the issue.
+        The clearer and simpler your example, the faster we can identify and fix the problem.
+
+        :warning: Issues without a minimal working reproduction may be closed without further investigation.
+
+        ---
+  - type: input
+    id: dipend-version
+    attributes:
+      label: Dipend Version
+      description: Specify the version of Dipend you're using.
+      placeholder: e.g., 1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction Steps
+      description: Step-by-step instructions to reproduce the issue.
+      placeholder: |
+        Example:
+        1. Create a Python project
+        2. Install dipend: `pip install dipend`
+        3. Define a simple service and register it in the container
+        4. Try to resolve it and observe the error
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What You Expected to Happen
+      description: Describe what you expected Dipend to do.
+      placeholder: I expected the container to resolve the service correctly.
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: What Actually Happened
+      description: Describe what actually occurred.
+      placeholder: The container failed to resolve the service and raised an exception.
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Context
+      description: Include any other details, links, or screenshots that might help us diagnose the issue.
+    validations:
+      required: false
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Info
+      description: |
+        Please provide environment details (OS, Python version, installed packages).
+        You can use `pip freeze` or a tool like `pipdeptree`.
+      placeholder: |
+        OS: Ubuntu 22.04
+        Python: 3.11.3
+        Packages:
+          dipend==1.0.0
+          other-package==x.y.z
+      render: Shell
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## Credits
+
+        This issue template was inspired by the Jest team and adapted for Dipend. Thank you for contributing to open source! 💙

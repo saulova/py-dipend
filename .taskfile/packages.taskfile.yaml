@@ -1,0 +1,25 @@
+version: "3"
+
+vars:
+  PACKAGE: '{{ default "MISSING_PACKAGE" .PACKAGE }}'
+
+tasks:
+  build:
+    desc: "Build all {{.PACKAGE}} components."
+    cmds:
+      - cp README.md ./packages/{{.PACKAGE}}/README.md
+      - cp LICENSE ./packages/{{.PACKAGE}}/LICENSE
+      - uv run --active ./scripts/normalize-version.py -p {{.PACKAGE}}
+      - uv build --package {{.PACKAGE}} --no-sources
+      - uv run --active ./scripts/add-license-header.py -p {{.PACKAGE}}
+
+  test:
+    desc: "Run {{.PACKAGE}} unit tests to ensure code quality."
+    cmds:
+      - uv run pytest -vv -s ./tests/{{.PACKAGE}}_unit_tests
+
+  test-coverage:
+    desc: "Run {{.PACKAGE}} test coverage to ensure code quality."
+    cmds:
+      - uv run coverage run --source=./packages/{{.PACKAGE}} -m pytest ./tests/{{.PACKAGE}}_unit_tests
+      - uv run coverage report -m --fail-under=95

@@ -1,0 +1,80 @@
+name: Question / Support Request ❓
+description: Ask a question or request support regarding Dipend
+title: "[Question]: "
+labels: ["question", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Need Help?
+        We're happy to assist! Please ensure your question is clear and complete so we can provide the best support possible.
+  - type: markdown
+    attributes:
+      value: |
+        ## Before Asking
+        - Search the [documentation](https://dipend.sauloalvarenga.dev.br) to see if your question is already answered.
+        - Check [existing issues](https://github.com/saulova/py-dipend/issues) to avoid duplicates.
+        - Note: GitHub Issues are intended for development-related questions. For general discussion or brainstorming, a community forum is coming soon.
+  - type: input
+    id: question-summary
+    attributes:
+      label: Summary
+      description: A short, one-line summary of your question or support need.
+      placeholder: 'Example: "How can I inject a singleton service across multiple modules?"'
+    validations:
+      required: true
+  - type: textarea
+    id: full-question
+    attributes:
+      label: Full Question / Support Request
+      description: Please describe your question or issue in detail.
+      placeholder: |
+        Example:
+        I have multiple modules in my Python project, and I want a singleton service registered in one module to be accessible across all others. What's the recommended pattern for this in dipend?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Code Example (if applicable)
+      description: If your question involves code, share a minimal reproducible snippet to help illustrate it.
+      placeholder: |
+        Example:
+        ```python
+        dependency_container = DependencyContainer()
+        dependency_container.add_singleton(ILogger, ConsoleLogger)
+        ```
+    validations:
+      required: false
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: What You've Tried
+      description: Let us know what you've already tried or what resources you've consulted.
+      placeholder: I read the "Scopes and Lifetimes" section in the docs but I'm still unsure how to proceed.
+    validations:
+      required: false
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Info (Optional)
+      description: |
+        Share details about your development environment, such as OS, Python version, and installed packages.
+      placeholder: |
+        System:
+          OS: Ubuntu 22.04
+          CPU: 8-core x86_64
+        Python: 3.11.3
+        Packages:
+          dipend==1.0.0
+      render: Shell
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## Thank You!
+
+        Thank you for reaching out to the Dipend team — we'll get back to you as soon as we can! 🙌

@@ -1,0 +1,27 @@
+name: Publish Dipend Graph
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.7.4"
+          python-version-file: ".python-version"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+      - name: Setup Task binary
+        run: curl -sL https://github.com/go-task/task/releases/download/v3.43.2/task_linux_amd64.tar.gz | sudo tar xvz -C /usr/local/bin
+      - name: Install dependencies
+        run: task install
+      - name: Build dipend-graph
+        run: task build-dipend-graph
+      - name: Publish dipend-graph
+        run: uv publish
