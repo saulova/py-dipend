@@ -1,0 +1,20 @@
+{
+  "service": "py-dipend-devcontainer",
+  "dockerComposeFile": "docker-compose.yaml",
+  "workspaceFolder": "/workspaces/py-dipend",
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "SHELL": "/bin/bash"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}

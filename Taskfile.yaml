@@ -1,0 +1,36 @@
+version: '3'
+
+includes:
+  dipend:
+    taskfile: ./.taskfile/packages.taskfile.yaml
+    vars:
+      PACKAGE: dipend
+  dipend-graph:
+    taskfile: ./.taskfile/packages.taskfile.yaml
+    vars:
+      PACKAGE: dipend-graph
+    excludes: [lint, test, test-coverage]
+
+tasks:
+  install:
+    cmds:
+      - uv venv ./.venv
+      - uv sync
+      - npm install --prefix ./packages/dipend-graph/src/dipend_graph
+
+  build-dipend:
+    cmds:
+      - task: dipend:build
+  
+  build-dipend-graph:
+    cmds:
+      - npm run build --prefix ./packages/dipend-graph/src/dipend_graph
+      - task: dipend-graph:build
+
+  lint-all:
+    cmds:
+      - uv run ruff check
+
+  test-all:
+    cmds:
+      - task: dipend:test

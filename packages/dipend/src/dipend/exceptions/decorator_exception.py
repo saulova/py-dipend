@@ -1,0 +1,2 @@
+class DecoratorException(BaseException):
+    pass

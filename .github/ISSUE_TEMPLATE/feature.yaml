@@ -1,0 +1,76 @@
+name: Feature Request ✨
+description: Suggest an idea or improvement for Dipend
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Suggest a New Feature or Improvement
+        Thank you for helping make Dipend better! Please fill in the details below to help us understand your request.
+  - type: markdown
+    attributes:
+      value: |
+        ## Before Submitting
+        - Check the [open issues](https://github.com/saulova/py-dipend/issues) to ensure this feature hasn't already been requested.
+        - Make sure your suggestion aligns with Dipend's goals by reviewing the [documentation](https://dipend.sauloalvarenga.dev.br).
+  - type: input
+    id: feature-title
+    attributes:
+      label: Feature Name
+      description: A short and descriptive title for your feature request.
+      placeholder: 'Example: "Support for Scoped Lifetimes"'
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: Describe the feature or improvement you'd like to see, and why it would be useful.
+      placeholder: |
+        Example:
+        I'd like Dipend to support scoped lifetimes so that services can be instantiated and managed per scope instead of globally.
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this feature important? What problem does it solve? What are the benefits?
+      placeholder: |
+        Example:
+        In complex systems, using global singletons can lead to shared-state issues. Scoped lifetimes would help manage resources more safely between different contexts, such as web requests.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Possible Alternatives
+      description: Have you considered alternative approaches or workarounds? Please describe them.
+      placeholder: |
+        Example:
+        I could manually handle per-request instances, but it introduces boilerplate and increases risk of errors.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, diagrams, or code examples that would clarify your idea.
+      placeholder: |
+        Example:
+        ```python
+        dependency_container = DependencyContainer()
+        dependency_container.add_per_context(MyService)
+        service_instance = dependency_container.resolve(MyService)
+        ```
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ---
+
+        ## Thanks!
+
+        Thank you for helping improve Dipend! We appreciate your ideas and input 💡
