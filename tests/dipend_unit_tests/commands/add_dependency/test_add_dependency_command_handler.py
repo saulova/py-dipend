@@ -32,7 +32,7 @@ class MyClass2:
         self.my_class1 = my_class1
 
 
-@inject_mapped_dependency(0, [MyClass2])
+@inject_mapped_dependency(0, MyClass2)
 class MyClass3:
     def __init__(self, my_class1: MyClass1):
         self.my_class1 = my_class1
